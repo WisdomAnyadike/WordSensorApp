@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,main{
+            background-color: yellow;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        #input{
+            width: 300px;
+        }
+        input,button{
+            height: 40px;
+        }
+
+        button{
+            font-size: 16px;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: navy;
+        }
+    </style>
+</head>
+<body>
+   <main> <input id="input" type="text" > <button id="button" onclick="changeWords()">click here</button></main> 
+    <h1 id="h1"> </h1>
+</body>
+</html>
+<script>
+    let input = document.getElementById('input')
+    let h1 = document.getElementById('h1')
+
+
+function changeWords(){ 
+ let inputsValue =  input.value
+ let value = inputsValue.toLowerCase()
+let firstSentence = value.replaceAll('fuck' , '****').replaceAll('shit' , '****')
+
+h1.innerHTML = firstSentence
+}
+
+ 
+ 
+
+
+
+
+
+
+
+</script>
