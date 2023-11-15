@@ -2,19 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1 , user-scalable=no">
     <title>Document</title>
     <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
         body,main{
-            background-color: yellow;
+            width: 100%;
+            height: fit-content;
+            background-color: rgba(255, 255, 0, 0);
             display: flex;
             align-items: center;
             flex-direction: column;
+            background-image: url('https://cdn.theatlantic.com/thumbor/KqYO5a0RKLZj6RLQvnZvzcovtzM=/0x0:2000x1125/1920x1080/filters:still()/media/img/2020/07/28/WEL_Andersen_ChinaOpenerREDO/original.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+          
+
         }
 
+        main{
+            margin-bottom: 20px;
+            background-image: none;
+        }
+
+        h1{
+
+          padding: 10px;
+            background-color: white;
+            border-radius: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 80%;
+            height: fit-content;
+            font-size: 13px;
+            text-align: center;
+            color: black;
+        }
+
+        b{
+          font-family: cursive;
+          font-size: 23px;
+          font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
 
         #input{
+            padding-left: 10px;
             width: 300px;
+            margin-bottom: 10px;
         }
         input,button{
             height: 40px;
@@ -23,15 +65,23 @@
         button{
             font-size: 16px;
             color: white;
+            padding: 0 10px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background-color: navy;
+            background-color: #4f7fbf;
+            margin-bottom: 5px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.529);
         }
+
     </style>
 </head>
 <body>
-   <main> <input id="input" type="text" > <button id="button" onclick="changeWords()">click here</button></main> 
+    <b> WordSensor App </b>
+   <main> <input id="input" type="text" placeholder="Input note here"> <button id="button" onclick="changeWords()">click here</button>
+<button id="refresh" onclick="refresh()"> <iconify-icon icon="material-symbols:refresh" style="color: white;"></iconify-icon> </button></main> 
     <h1 id="h1"> </h1>
 </body>
 </html>
@@ -43,11 +93,15 @@
 function changeWords(){ 
  let inputsValue =  input.value
  let value = inputsValue.toLowerCase()
-let firstSentence = value.replaceAll('fuck' , '****').replaceAll('shit' , '****')
+let firstSentence = value.replaceAll('fuck' , '***').replaceAll('shit' , '****')
 
 h1.innerHTML = firstSentence
 }
 
+let refresh = ()=> {
+    h1.innerHTML = ''
+    input.value = ''
+}
  
  
 
@@ -58,3 +112,4 @@ h1.innerHTML = firstSentence
 
 
 </script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
